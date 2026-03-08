@@ -5,11 +5,13 @@
 <title>Esk & Mo's Birthday Celebration!</title>
 
 <style>
+
 body{
 font-family: Arial, sans-serif;
 background: linear-gradient(#ffb6f0,#ffe8a3);
 text-align:center;
 margin:0;
+overflow-x:hidden;
 }
 
 h1{
@@ -24,7 +26,7 @@ color:#333;
 
 .banner{
 font-size:26px;
-background:#fff;
+background:white;
 padding:15px;
 margin:20px;
 border-radius:10px;
@@ -83,11 +85,34 @@ button:hover{
 background:#ff1a8c;
 }
 
+.confetti{
+position:absolute;
+font-size:18px;
+animation:fall 1s linear forwards;
+}
+
+@keyframes fall{
+0%{transform:translateY(0)}
+100%{transform:translateY(80px);opacity:0}
+}
+
+#winScreen{
+display:none;
+margin-top:30px;
+}
+
+#winScreen img{
+width:300px;
+border-radius:12px;
+margin-top:10px;
+}
+
 footer{
 margin-top:40px;
 padding:20px;
 font-size:18px;
 }
+
 </style>
 </head>
 
@@ -96,26 +121,24 @@ font-size:18px;
 <h1>🎉 Esk & Mo's Birthday Bash! 🎉</h1>
 
 <div class="banner">
-Welcome to the ultimate birthday party for **Esk and Mo!**  
-Eat cake, pop balloons, and celebrate! 🎂🎈
+Welcome to the ultimate birthday party for Esk and Mo!  
+Pop balloons, eat cake, and celebrate! 🎂🎈
 </div>
 
 <h2>Party Gallery</h2>
 
 <div class="gallery">
-
 <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636">
 <img src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84">
 <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce">
 <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b">
 <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176">
 <img src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec">
-
 </div>
 
 <h2>🎮 Balloon Pop Game</h2>
 
-<p>Click the balloons before they float away!</p>
+<p>Pop 10 balloons to win!</p>
 
 <div id="score">Score: 0</div>
 <br>
@@ -123,20 +146,33 @@ Eat cake, pop balloons, and celebrate! 🎂🎈
 
 <div id="gameArea"></div>
 
+<div id="winScreen">
+<h1>🎉 YOU WIN!!! 🎉</h1>
+<p>Esk and Mo would be proud!</p>
+
+<img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f">
+</div>
+
 <footer>
-🎂 Happy Birthday Esk & Mo! 🎂  
-Have the most fun birthday ever!
+🎂 Happy Birthday Esk & Mo! 🎂
 </footer>
+
+<!-- Birthday Music -->
+<audio autoplay loop>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
 
 <script>
 
 let score = 0
 let gameRunning = false
+let maxScore = 10
 
 function startGame(){
 score = 0
 gameRunning = true
 document.getElementById("score").innerText = "Score: 0"
+document.getElementById("winScreen").style.display = "none"
 spawnBalloon()
 }
 
@@ -170,13 +206,43 @@ clearInterval(rise)
 },20)
 
 balloon.onclick = function(){
+
 score++
 document.getElementById("score").innerText = "Score: " + score
+
+createConfetti(balloon.offsetLeft, balloon.offsetTop)
+
 balloon.remove()
 clearInterval(rise)
+
+if(score >= maxScore){
+gameRunning = false
+document.getElementById("winScreen").style.display = "block"
+return
+}
+
 }
 
 setTimeout(spawnBalloon,1000)
+
+}
+
+function createConfetti(x,y){
+
+for(let i=0;i<10;i++){
+
+let confetti = document.createElement("div")
+confetti.className = "confetti"
+confetti.innerHTML = ["🎊","✨","🎉","⭐"][Math.floor(Math.random()*4)]
+
+confetti.style.left = (x + Math.random()*40) + "px"
+confetti.style.top = y + "px"
+
+document.getElementById("gameArea").appendChild(confetti)
+
+setTimeout(()=>confetti.remove(),1000)
+
+}
 
 }
 
