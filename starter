@@ -1,28 +1,31 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>English Bulldog World</title>
+
+<title>KayKay and TayTay's Bulldog Fansite</title>
 
 <style>
+
 body{
 font-family: Arial, sans-serif;
 margin:0;
-background:#f5f5f5;
+background:#f4f4f4;
 color:#333;
 }
 
 header{
-background:#8B4513;
+background:#7a3b12;
 color:white;
-padding:20px;
+padding:25px;
 text-align:center;
 }
 
 nav{
 background:#333;
-padding:10px;
+padding:12px;
 text-align:center;
 }
 
@@ -34,36 +37,42 @@ font-weight:bold;
 }
 
 nav a:hover{
-color:#ffcc00;
+color:#ffd000;
 }
 
 .hero{
-background:url("https://images.unsplash.com/photo-1517849845537-4d257902454a") center/cover;
-height:350px;
+background-image:url("https://upload.wikimedia.org/wikipedia/commons/0/05/English_Bulldog_standing.jpg");
+background-size:cover;
+background-position:center;
+height:380px;
 display:flex;
 align-items:center;
 justify-content:center;
 color:white;
 font-size:40px;
 font-weight:bold;
-text-shadow:2px 2px 8px black;
+text-shadow:2px 2px 10px black;
 }
 
 section{
 padding:40px;
-max-width:1000px;
+max-width:1100px;
 margin:auto;
 }
 
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+margin-top:25px;
 }
 
 .gallery img{
 width:100%;
+height:200px;
+object-fit:cover;
 border-radius:10px;
+box-shadow:0 3px 8px rgba(0,0,0,0.2);
 }
 
 footer{
@@ -73,71 +82,120 @@ text-align:center;
 padding:20px;
 margin-top:30px;
 }
-</style>
 
+ul{
+line-height:1.8;
+}
+
+</style>
 </head>
+
 
 <body>
 
 <header>
-<h1>English Bulldog World</h1>
-<p>The ultimate place for bulldog lovers</p>
+<h1>KayKay and TayTay's Bulldog Fansite</h1>
+<p>A fun place dedicated to our favorite wrinkly dogs!</p>
 </header>
 
 <nav>
-<a href="#about">About</a>
-<a href="#care">Care</a>
-<a href="#gallery">Gallery</a>
+<a href="#about">About Bulldogs</a>
+<a href="#care">Bulldog Care</a>
+<a href="#gallery">Bulldog Gallery</a>
 <a href="#contact">Contact</a>
 </nav>
 
+
 <div class="hero">
-English Bulldogs
+We Love English Bulldogs
 </div>
+
 
 <section id="about">
-<h2>About the Breed</h2>
+
+<h2>About English Bulldogs</h2>
+
 <p>
-The English Bulldog is one of the most recognizable dog breeds in the world. Known for their wrinkled face,
-stocky body, and lovable personality, bulldogs are loyal companions and excellent family pets.
+English Bulldogs are one of the most recognizable dog breeds in the world. 
+They are known for their wrinkled faces, muscular build, and lovable personalities.
+Despite their tough appearance, bulldogs are extremely affectionate and loyal companions.
 </p>
+
 <p>
-Despite their tough appearance, they are gentle, affectionate, and love spending time with their owners.
+They are great family dogs and love being around people. Bulldogs are calm, friendly,
+and often very funny because of their stubborn but charming personalities.
 </p>
+
 </section>
+
+
 
 <section id="care">
-<h2>Bulldog Care</h2>
+
+<h2>Bulldog Care Tips</h2>
+
 <ul>
-<li>Daily short walks</li>
-<li>Regular cleaning of facial wrinkles</li>
-<li>Moderate exercise (they overheat easily)</li>
-<li>High-quality dog food</li>
-<li>Routine vet visits</li>
+<li>Short daily walks are perfect for bulldogs.</li>
+<li>Clean their facial wrinkles regularly to prevent infections.</li>
+<li>Avoid overheating — bulldogs don't handle heat well.</li>
+<li>Feed high-quality dog food in controlled portions.</li>
+<li>Regular vet visits help maintain their health.</li>
 </ul>
+
 </section>
 
+
+
 <section id="gallery">
-<h2>Bulldog Gallery</h2>
+
+<h2>English Bulldog Photo Gallery</h2>
 
 <div class="gallery">
-<img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e">
-<img src="https://images.unsplash.com/photo-1601758173928-196f6b35c6c6">
-<img src="https://images.unsplash.com/photo-1596495578065-5e0763e3e0b5">
-<img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/English_Bulldog_standing.jpg">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/English_Bulldog_600.jpg">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Bulldog_adult_male.jpg">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Bulldog_puppy.jpg">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/English_Bulldog_portrait.jpg">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Bulldog_resting.jpg">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/85/British_Bulldog.jpg">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/96/English_Bulldog_face.jpg">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Bulldog_puppy_sitting.jpg">
+
 </div>
 
 </section>
 
+
+
 <section id="contact">
-<h2>Contact</h2>
-<p>Email: bulldoglovers@example.com</p>
-<p>Follow us on social media for more bulldog photos and tips!</p>
+
+<h2>Contact Our Fansite</h2>
+
+<p>
+Do you love English Bulldogs as much as we do?
+Send us your bulldog photos or stories!
+</p>
+
+<p>Email: bulldogfans@example.com</p>
+
 </section>
 
+
 <footer>
-<p>© 2026 English Bulldog World</p>
+
+<p>© 2026 KayKay and TayTay's Bulldog Fansite</p>
+
 </footer>
 
 </body>
 </html>
+```
